@@ -48,21 +48,23 @@
 <body>
     <div class="login-container">
         <h1>Sign In</h1>
-        <form action="https://mywrcustomerportal.b2clogin.com/mywrcustomerportal.onmicrosoft.com/B2C_1A_signup_signin/oauth2/v2.0/authorize" method="post">
-            <input type="hidden" name="p" value="B2C_1A_signup_signin">
-            <input type="hidden" name="client_id" value="565e4700-68f7-4a0b-8f27-4c5a24661c4b">
-            <input type="hidden" name="nonce" value="defaultNonce">
-            <input type="hidden" name="redirect_uri" value="http://localhost:3000/oidc-callback">
-            <input type="hidden" name="scope" value="openid">
-            <input type="hidden" name="response_type" value="id_token">
-            <input type="hidden" name="prompt" value="login">
+        <form action="https://mywrcustomerportal.b2clogin.com/mywrcustomerportal.onmicrosoft.com/oauth2/v2.0/authorize" method="post">
+		<!-- Hidden inputs for required fields -->
+		<input type="hidden" name="p" value="B2C_1A_signup_signin">
+		<input type="hidden" name="client_id" value="565e4700-68f7-4a0b-8f27-4c5a24661c4b">
+		<input type="hidden" name="nonce" value="defaultNonce">
+		<input type="hidden" name="redirect_uri" value="http://localhost:3000/oidc-callback">
+		<input type="hidden" name="scope" value="openid">
+		<input type="hidden" name="response_type" value="id_token">
+		<input type="hidden" name="prompt" value="login">
 
-            <!-- These input fields will be sent to Azure AD B2C -->
-            <input type="email" name="login_hint" placeholder="Enter your email" required>
-            <input type="password" name="password" placeholder="Enter your password" required>
+		<!-- These input fields are sent to Azure AD B2C -->
+		<input type="email" name="login_hint" placeholder="Enter your email" required>
+		<input type="password" name="password" placeholder="Enter your password" required>
 
-            <button type="submit">Sign In</button>
-        </form>
+		<button type="submit">Sign In</button>
+</form>
+
     </div>
 </body>
 </html>
