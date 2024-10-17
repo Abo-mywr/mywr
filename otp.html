@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .otp-container {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .otp-container h1 {
+            margin-bottom: 20px;
+        }
+        .otp-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .otp-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0078D7;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .otp-container button:hover {
+            background-color: #005BB5;
+        }
+    </style>
+</head>
+<body>
+    <div class="otp-container">
+        <h1>Generate OTP</h1>
+        <form action="https://mywrcustomerportal.b2clogin.com/mywrcustomerportal.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_TrustFrameworkExtensions&client_id=565e4700-68f7-4a0b-8f27-4c5a24661c4b&nonce=defaultNonce&redirect_uri=https://mywrcustomerportal.com/otp-callback&scope=openid&response_type=id_token&prompt=login" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Generate OTP</button>
+        </form>
+    </div>
+</body>
+</html>

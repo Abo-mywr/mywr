@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0078D7;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #005BB5;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Sign In</h1>
+        <form action="https://mywrcustomerportal.b2clogin.com/mywrcustomerportal.onmicrosoft.com/B2C_1A_signup_signin/oauth2/v2.0/authorize" method="get">
+            <!-- Use `GET` method if query parameters are being passed; otherwise `POST` for form data -->
+            <input type="hidden" name="p" value="B2C_1A_signup_signin">
+            <input type="hidden" name="client_id" value="565e4700-68f7-4a0b-8f27-4c5a24661c4b">
+            <input type="hidden" name="nonce" value="defaultNonce">
+            <input type="hidden" name="redirect_uri" value="https://mywr-dev.wilroffreitsma.nl:8080/oidc-callback">
+            <input type="hidden" name="scope" value="openid">
+            <input type="hidden" name="response_type" value="id_token">
+            <input type="hidden" name="prompt" value="login">
+
+            <!-- These input fields will be sent to Azure AD B2C -->
+            <input type="email" name="login_hint" placeholder="Enter your email" required>
+            <input type="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+</body>
+</html>
